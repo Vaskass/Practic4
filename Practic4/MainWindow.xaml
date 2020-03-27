@@ -1,0 +1,105 @@
+﻿<Window x:Class="Practic4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practic4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="277.5" Width="694">
+    <Window.Resources>
+
+        <Style TargetType="{x:Type Canvas}">
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <RotateTransform></RotateTransform>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+
+                <EventTrigger RoutedEvent="Button.MouseLeftButtonDown">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Angle"
+                 By="20" Duration="0:0:0.2" RepeatBehavior="1x"></DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Button.MouseRightButtonDown">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Angle"
+                 By="-20" Duration="0:0:0.2" RepeatBehavior="1x"></DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <!---->
+        <Viewbox x:Name="vb1" Margin="70" MouseEnter="vb1_MouseEnter" MouseLeave="vb1_MouseLeave" >
+            <Canvas  Width="100" Height="100" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+
+                <Polygon  Stroke="DimGray" Points="0,25 0,75 50,100 100,75 100,25 50,0" >
+                    <Polygon.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FFFEFEFE" Offset="0.67"/>
+                            <GradientStop Color="#FFCBC9C9" Offset="1"/>
+                            <GradientStop Color="#FF8B8181" Offset="0.126"/>
+                        </RadialGradientBrush>
+                    </Polygon.Fill>
+                </Polygon>
+                <Ellipse Width="50" Height="50" Fill="#FFAAAAAA" Canvas.Top="25" Canvas.Left="25" Opacity="1" Stroke="Black" StrokeThickness="1"/>
+                <Rectangle Width="74" Height="20" Fill="#FF72FF9C" Canvas.Left="13" Canvas.Top="40" Stroke="#FF292929" ></Rectangle>
+                <Line X1="13" Y1="50" X2="30" Y2="50" Stroke="Brown" StrokeLineJoin="Miter" StrokeThickness="3"/>
+            </Canvas>
+        </Viewbox>
+        <Viewbox x:Name="vb1_Copy2" Margin="70" MouseEnter="vb1_MouseEnter" MouseLeave="vb1_MouseLeave" Grid.Column="1" >
+            <Canvas  Width="100" Height="100" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+
+                <Polygon  Stroke="DimGray" Points="0,25 0,75 50,100 100,75 100,25 50,0" >
+                    <Polygon.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FFFEFEFE" Offset="0.67"/>
+                            <GradientStop Color="#FFCBC9C9" Offset="1"/>
+                            <GradientStop Color="#FF8B8181" Offset="0.126"/>
+                        </RadialGradientBrush>
+                    </Polygon.Fill>
+                </Polygon>
+                <Ellipse Width="50" Height="50" Fill="#FFAAAAAA" Canvas.Top="25" Canvas.Left="25" Opacity="1" Stroke="Black" StrokeThickness="1"/>
+                <Rectangle Width="74" Height="20" Fill="#FF72FF9C" Canvas.Left="13" Canvas.Top="40" Stroke="#FF292929" />
+                <Line X1="13" Y1="50" X2="30" Y2="50" Stroke="Brown" StrokeLineJoin="Miter" StrokeThickness="3"/>
+            </Canvas>
+        </Viewbox>
+        <Viewbox x:Name="vb1_Copy1" Margin="70" MouseEnter="vb1_MouseEnter" MouseLeave="vb1_MouseLeave" Grid.Column="2" >
+            <Canvas  Width="100" Height="100" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+
+                <Polygon  Stroke="DimGray" Points="0,25 0,75 50,100 100,75 100,25 50,0" >
+                    <Polygon.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FFFEFEFE" Offset="0.67"/>
+                            <GradientStop Color="#FFCBC9C9" Offset="1"/>
+                            <GradientStop Color="#FF8B8181" Offset="0.126"/>
+                        </RadialGradientBrush>
+                    </Polygon.Fill>
+                </Polygon>
+                <Ellipse Width="50" Height="50" Fill="#FFAAAAAA" Canvas.Top="25" Canvas.Left="25" Opacity="1" Stroke="Black" StrokeThickness="1"/>
+                <Rectangle Width="74" Height="20" Fill="#FF72FF9C" Canvas.Left="13" Canvas.Top="40" Stroke="#FF292929" />
+                <Line X1="13" Y1="50" X2="30" Y2="50" Stroke="Brown" StrokeLineJoin="Miter" StrokeThickness="3"/>
+            </Canvas>
+        </Viewbox>
+        <Label Content="sosi" Grid.Column="1" HorizontalAlignment="Left" Margin="36,191,0,0" VerticalAlignment="Top"/>
+        <Label Content="sosi" Grid.Column="1" HorizontalAlignment="Left" Margin="120,191,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
